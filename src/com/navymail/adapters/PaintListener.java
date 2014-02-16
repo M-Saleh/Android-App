@@ -124,7 +124,7 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 		TextView sigInfo = (TextView) border.getChildAt(0);  // (tasdeq, 3ard, et5az l lazm , ...)
 		TextView sigDate = (TextView) border.getChildAt(2);
 		
-//		Setting margin for data under the sign
+//		Setting margin for sigInfo and sigDate
 		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams
 				(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 		
@@ -132,8 +132,16 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 			llp.setMargins(0, -10, 0, 0);
 		else
 			llp.setMargins(0, -30, 0, 0);
-		
 		sigDate.setLayoutParams(llp);
+
+		llp = new LinearLayout.LayoutParams
+				(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+
+		if (activityInstance.isQa2ed())
+			llp.setMargins(0,0,0,-20);
+		else
+			llp.setMargins(0, 0, 0, -30);
+		sigInfo.setLayoutParams(llp);
 		
 		ImageView sign = (ImageView) Shared.customStamp.findViewById(R.id.sign);
 		if (activityInstance.isQa2ed())

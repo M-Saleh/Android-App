@@ -13,7 +13,7 @@ import android.view.View.OnClickListener;
 public abstract class NavymailActivity extends Activity implements
 		OnClickListener {
 
-	private boolean default_user_qa2d = false ;
+	private boolean default_user_qa2d = true ;
 	
 	protected Context mContext = this;
 	protected LayoutInflater inflater;

@@ -14,20 +14,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="-20dp"
+            android:layout_marginBottom="-30dp"
             android:gravity="center"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/sign"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
-
         </ImageView>
 
         <TextView
-            android:layout_marginTop="-10dp"
             android:id="@+id/units"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
