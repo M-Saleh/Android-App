@@ -1,0 +1,223 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <FrameLayout
+        android:id="@+id/parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/tool_box" />
+
+    <Button
+        android:id="@+id/show_hide"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_above="@+id/tool_box"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/down" >
+    </Button>
+    
+    <Button
+        android:id="@+id/remove_all"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_above="@+id/tool_box"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/remove" >
+    </Button>
+
+    <RelativeLayout
+        android:id="@+id/tool_box"
+        android:layout_width="fill_parent"
+        android:layout_height="275dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/btn_group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <CheckBox
+                android:id="@+id/btn1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="للدراسـة والإفـــادة"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            
+            <CheckBox
+                android:id="@+id/btn7"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="للدراسـة والإفـــادة عاجلا "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/btn2"
+               	android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="للتنسيـق والمتــابعة"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+             <CheckBox
+                android:id="@+id/btn8"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="للتنسيـق والمتــابعة وإتخاذ اللازم"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+             
+           
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-5dp"
+            android:layout_toLeftOf="@+id/btn_group1"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <CheckBox
+                android:id="@+id/tsdk"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="تـصــــدق"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/show"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="للعــــــــــــــــــرض"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            
+             <CheckBox
+                 android:visibility="visible"
+                android:id="@+id/suggest_tasdek"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="اقتـــــرح التصديـــــق"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+              <CheckBox
+                android:id="@+id/btn5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="إتخـــــــاذ الــــلازم"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+              
+            <Button
+                android:visibility="visible"
+                android:id="@+id/commander_save"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:text="حــفــظ"
+                android:textColor="#ff0000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <Button
+                android:id="@+id/add_units"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="3dp"
+                android:text="إضافة وحدات"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+            android:id="@+id/t2hera_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="تأشيرة السيد "
+            android:textColor="#ff0000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+            
+            <ToggleButton
+                android:id="@+id/manual"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="3dp"
+                android:textOff="القلم (تعديل يدوى)"
+                android:textOn="إلغاء القلم"
+                android:textColor="#ff0000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+             <Button
+                android:visibility="visible"
+                android:id="@+id/commander_3ard"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="3dp"
+                android:text="عرض السيد القائــد"
+                android:textColor="#ff0000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+             
+            <Button
+                android:visibility="gone"
+                android:id="@+id/clear"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="3dp"
+                android:text="حذف التأشيرات"
+                android:textColor="#ff0000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

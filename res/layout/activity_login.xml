@@ -1,0 +1,276 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:layout_margin="30dp"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:id="@+id/layout0" >
+
+    <TextView
+        android:id="@+id/textViewWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="كلمة مرور السيد "
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp" >
+		
+		<ImageView
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
+		    android:src="@android:drawable/ic_delete"
+		    android:visibility="invisible" />
+		
+		<EditText
+		    android:id="@+id/password_field"
+		    android:layout_width="350dp"
+		    android:layout_height="75dp"
+		    android:password="true"
+		    android:textColor="@android:color/black"
+		    android:textSize="35sp"
+		    android:textStyle="bold" />
+		
+		<ImageView
+		    android:id="@+id/clear_t2shera"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
+		    android:layout_gravity="center"
+		    android:src="@android:drawable/ic_delete" >
+		</ImageView>
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/num_pad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="2"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="3"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="4"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="5"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="6"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="7"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="8"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="9"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="*"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="#"
+                    android:textColor="@android:color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/change_pass_button"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:text="تسجيل الدخول"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:id="@+id/change_pas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="تغيير كلمة المرور"
+            android:textColor="#ff0000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        
+
+        <LinearLayout
+            android:id="@+id/verification_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CustomProgressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:progress="00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="جارى مطابقة البيانات"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+         >
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="500dp"
+            android:layout_height="700dp" />
+
+        <TextView
+            android:id="@+id/textView_tmam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_name_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
