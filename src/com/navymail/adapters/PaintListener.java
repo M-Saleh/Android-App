@@ -1,8 +1,10 @@
 package com.navymail.adapters;
 
 import java.util.Date;
+
 import android.app.Activity;
 import android.graphics.Color;
+import android.provider.SyncStateContract.Constants;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -12,6 +14,8 @@ import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
@@ -25,10 +29,14 @@ import com.navymail.core.NavymailActivity;
 import com.navymail.shared.Shared;
 import com.navymail.ui.R;
 
-public class PaintListener implements OnTouchListener, OnDragListener {
+public class PaintListener implements OnTouchListener, OnDragListener , OnPreDrawListener{
 
 	ApplicationController app = ApplicationController.getInstance() ;
 	public NavymailActivity activityInstance;
+	ViewTreeObserver vto;
+	float eventX ;
+	float eventY ;
+	
 	public PaintListener(NavymailActivity activity) {
 		this.activityInstance = activity;
 	}
@@ -67,8 +75,8 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
-		float eventX = event.getX();
-		float eventY = event.getY();
+		eventX = event.getX();
+		eventY = event.getY();
 
 		if (Shared.drawingMode == 2) {  // free hand mode
 			Shared.mPaint.setColor(Color.parseColor(activityInstance.app.currentUser.signatureColor));
@@ -104,18 +112,19 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 				Shared.parent.removeViewAt(Shared.parent.getChildCount() - 1);
 
 			prepareSignature(Shared.signatureMode);
+			
+//			OnpreDraw will called before adding to parent
+			vto = Shared.customStamp.getViewTreeObserver();
+			vto.addOnPreDrawListener(this);
 
-			Shared.customStamp.setX(eventX - 100);
-			Shared.customStamp.setY(eventY - 100);
 			Shared.parent.addView(Shared.customStamp);
-
 			v.invalidate();
 		}
 		return true;
 	}
 
 	public void prepareSignature(int type) {
-		
+
 		LayoutInflater inflater = LayoutInflater.from(activityInstance);
 		Shared.customStamp = (FrameLayout) inflater.inflate(R.layout.custom_tamp, null);
 		LinearLayout border = (LinearLayout) Shared.customStamp.findViewById(R.id.border);
@@ -230,6 +239,7 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 		agree.setOnClickListener(listener);
 		Button agree2 = (Button) Shared.customStamp.findViewById(R.id.agree2);
 		agree2.setOnClickListener(listener);
+		
 	}
 
 	private String prepareSignatureText() {
@@ -249,6 +259,30 @@ public class PaintListener implements OnTouchListener, OnDragListener {
 		}
 		activityInstance.app.cachedOrders = str;
 		return str;
+	}
+
+	@Override
+	public boolean onPreDraw() {
+		int heightView = Shared.customStamp.getMeasuredHeight();
+    	int widthView = Shared.customStamp.getMeasuredWidth();
+
+//    	Hieght
+    	if (eventY -100 < -90) // up
+    		Shared.customStamp.setY(-90);
+    	else if ((eventY-100+heightView) > Shared.screenHeight - com.navymail.core.Constants.toolBooxHieght_assumption) //down
+    		Shared.customStamp.setY(Shared.screenHeight - com.navymail.core.Constants.toolBooxHieght_assumption -heightView+80);
+    	else // default
+    		Shared.customStamp.setY(eventY - 100);
+    	
+//    	Width
+    	if (eventX -100 < -20) // left
+    		Shared.customStamp.setX(-20);
+    	else if ((eventX-100+widthView) > Shared.screenWidth+20 ) //right
+    		Shared.customStamp.setX(Shared.screenWidth-widthView+20);
+    	else // default
+    		Shared.customStamp.setX(eventX - 100);
+    	
+		return true ;
 	}
 
 }

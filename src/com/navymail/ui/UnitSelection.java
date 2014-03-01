@@ -48,10 +48,12 @@ public class UnitSelection extends Activity {
 				}
 			}
 		}
+		
 		Iterator<Integer> itr = heap.navigableKeySet().iterator();
 		while(itr.hasNext()){
 			result += heap.get(itr.next())+"\n";
 		}
+		
 		return result; 
 	}
 	

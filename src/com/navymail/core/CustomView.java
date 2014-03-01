@@ -33,6 +33,7 @@ public class CustomView extends View {
 		
 		PaintListener pListener = new PaintListener((NavymailActivity)Shared.mContext);
 		this.setOnTouchListener(pListener);
+		
 		this.setId(808);
 	}
 

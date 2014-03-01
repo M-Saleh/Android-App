@@ -41,7 +41,8 @@ public class EditTopic extends NavymailActivity {
 	String topicType = "";
 	String topicName = "" ;
 	int topicID;
-
+	public static RelativeLayout toolBox;
+	
 	static ApplicationController app = ApplicationController.getInstance() ;
 
 	@Override
@@ -167,7 +168,7 @@ public class EditTopic extends NavymailActivity {
 			break;
 			
 		case R.id.show_hide:
-			RelativeLayout toolBox = (RelativeLayout) findViewById(R.id.tool_box);
+			toolBox = (RelativeLayout) findViewById(R.id.tool_box);
 			if (toolBox.getVisibility() == RelativeLayout.GONE) {
 				toolBox.setVisibility(RelativeLayout.VISIBLE);
 				btn.setBackgroundResource(R.drawable.down);
@@ -176,6 +177,7 @@ public class EditTopic extends NavymailActivity {
 
 				params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
 				params.addRule(RelativeLayout.ABOVE, R.id.tool_box);
+				Constants.toolBooxHieght_assumption = 250 ;
 			} else {
 				toolBox.setVisibility(RelativeLayout.GONE);
 				btn.setBackgroundResource(R.drawable.up);
@@ -183,6 +185,8 @@ public class EditTopic extends NavymailActivity {
 						.getLayoutParams();
 				params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM,
 						RelativeLayout.TRUE);
+				
+				Constants.toolBooxHieght_assumption = 0 ;
 			}
 			break;
 
@@ -346,4 +350,5 @@ public class EditTopic extends NavymailActivity {
 		topicFolder.delete() ;
 		
 	}
+	
 }

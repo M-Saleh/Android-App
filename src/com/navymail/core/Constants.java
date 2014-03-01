@@ -11,4 +11,6 @@ public class Constants {
 	
 	final public static String IS_QA2ED = "IS_QA2ED";
 	
+	public static int toolBooxHieght_assumption = 250 ;
+	
 }
