@@ -1,10 +1,8 @@
 package com.navymail.adapters;
 
 import java.util.Date;
-
 import android.app.Activity;
 import android.graphics.Color;
-import android.provider.SyncStateContract.Constants;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.navymail.core.ApplicationController;
 import com.navymail.core.NavymailActivity;
 import com.navymail.shared.Shared;
@@ -266,18 +263,18 @@ public class PaintListener implements OnTouchListener, OnDragListener , OnPreDra
 		int heightView = Shared.customStamp.getMeasuredHeight();
     	int widthView = Shared.customStamp.getMeasuredWidth();
 
-//    	Hieght
-    	if (eventY -100 < -90) // up
-    		Shared.customStamp.setY(-90);
+//    	Height
+    	if (eventY -100 < -70) // up
+    		Shared.customStamp.setY(-70);
     	else if ((eventY-100+heightView) > Shared.screenHeight - com.navymail.core.Constants.toolBooxHieght_assumption) //down
-    		Shared.customStamp.setY(Shared.screenHeight - com.navymail.core.Constants.toolBooxHieght_assumption -heightView+80);
+    		Shared.customStamp.setY(Shared.screenHeight - com.navymail.core.Constants.toolBooxHieght_assumption -heightView+45);
     	else // default
     		Shared.customStamp.setY(eventY - 100);
     	
 //    	Width
     	if (eventX -100 < -20) // left
     		Shared.customStamp.setX(-20);
-    	else if ((eventX-100+widthView) > Shared.screenWidth+20 ) //right
+    	else if ((eventX-120+widthView) > Shared.screenWidth+20 ) //right
     		Shared.customStamp.setX(Shared.screenWidth-widthView+20);
     	else // default
     		Shared.customStamp.setX(eventX - 100);
