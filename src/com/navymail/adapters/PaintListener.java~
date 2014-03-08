@@ -174,7 +174,7 @@ public class PaintListener implements OnTouchListener, OnDragListener , OnPreDra
 			if (activityInstance.isQa2ed())
 			{
 				signature.setImageResource(R.drawable.sa7);
-				signature.setLayoutParams(new LinearLayout.LayoutParams(170, 100));
+				signature.setLayoutParams(new LinearLayout.LayoutParams(170, 170));
 				d = new Date();
 				String dateStr = d.getDate() + "-" + (d.getMonth() + 1) + "-"
 						+ (d.getYear() + 1900);
