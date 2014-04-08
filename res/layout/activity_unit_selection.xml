@@ -323,6 +323,17 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_marginRight="100dp"
+                    android:tag="25"
+                    android:text="قائد ميناء إدكو"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                
+                <CheckBox
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="100dp"
                     android:tag="26"
                     android:text="مدير معهد الطب البحرى واﻷعماق العسكرى"
                     android:textColor="@android:color/black"
